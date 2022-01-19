@@ -1,14 +1,18 @@
-import './App.css';
+import React, { Component } from 'react';
+import { useSelector } from 'react-redux';
+import SampleForm from './components/SampleForm';
 
-function App() {
-  return (
-    <div className="App">
-      <form>
-        <input name='Name'></input>
-        <button type='submit'>submit</button>
-      </form>
-    </div>
-  );
+class App extends Component {
+  componentDidMount(){
+    console.log(this.props.user);
+  }
+  render() {
+    return <SampleForm/>;
+  }
+}
+
+App.prototypes={
+  user: String.isRequired
 }
 
 export default App;
